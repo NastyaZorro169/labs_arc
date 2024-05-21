@@ -7,7 +7,7 @@ RUN git clone https://github.com/tdv/redis-cpp.git && cd redis-cpp && mkdir buil
 RUN git clone https://github.com/edenhill/librdkafka.git && cd librdkafka && ./configure && make && sudo make install && cd 
 RUN git clone https://github.com/mfontanini/cppkafka && cd cppkafka && mkdir build && cd build && cmake .. && make && sudo make install && cd 
 ARG build3=$RANDOM
-RUN git clone --branch lab5 https://github.com/NastyaZorro169/labs_arc.git
+RUN git clone https://github.com/NastyaZorro169/labs_arc.git
 RUN sudo ldconfig
 RUN cd labs_arc/ServiceOrder/db_writer && mkdir build && cd build && cmake  .. && make
 ENTRYPOINT [ "labs_arc/ServiceOrder/db_writer/build/db_writer" ]
